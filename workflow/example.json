@@ -1,0 +1,283 @@
+{
+  "last_node_id": 14,
+  "last_link_id": 7,
+  "nodes": [
+    {
+      "id": 6,
+      "type": "PhotoDoodle_Crop",
+      "pos": [
+        838.5349731445312,
+        922.7020874023438
+      ],
+      "size": [
+        315,
+        82
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 3
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            4,
+            7
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PhotoDoodle_Crop"
+      },
+      "widgets_values": [
+        512,
+        768
+      ]
+    },
+    {
+      "id": 7,
+      "type": "LoadImage",
+      "pos": [
+        447.44464111328125,
+        930.541259765625
+      ],
+      "size": [
+        315,
+        314
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            3
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.27",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "rccRQ_FaceRestoreYolov5l_00012_.png",
+        "image"
+      ]
+    },
+    {
+      "id": 14,
+      "type": "PreviewImage",
+      "pos": [
+        1223.6644287109375,
+        1095.6341552734375
+      ],
+      "size": [
+        210,
+        246
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 7
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.27",
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 9,
+      "type": "PhotoDoodle_Sampler",
+      "pos": [
+        1246.357666015625,
+        669.14453125
+      ],
+      "size": [
+        357.15643310546875,
+        339.333984375
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipeline",
+          "type": "MODEL_PhotoDoodle",
+          "link": 5
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 4
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            6
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PhotoDoodle_Sampler"
+      },
+      "widgets_values": [
+        "add a halo and wings for the cat by sksmagiceffects",
+        197606035,
+        "randomize",
+        512,
+        768,
+        20,
+        3.5,
+        512
+      ]
+    },
+    {
+      "id": 12,
+      "type": "PreviewImage",
+      "pos": [
+        1655.371337890625,
+        674.1093139648438
+      ],
+      "size": [
+        268.6025695800781,
+        302.3486022949219
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 6
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.27",
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 10,
+      "type": "PhotoDoodle_Loader",
+      "pos": [
+        715.4060668945312,
+        611.3027954101562
+      ],
+      "size": [
+        375.03948974609375,
+        202
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "MODEL_PhotoDoodle",
+          "links": [
+            5
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PhotoDoodle_Loader"
+      },
+      "widgets_values": [
+        "svdq-int4-flux.1-dev",
+        "photodoodle/pretrain.safetensors",
+        "photodoodle/sksmonstercalledlulu.safetensors",
+        "nunchaku-fp16",
+        "enable",
+        "bfloat16"
+      ]
+    }
+  ],
+  "links": [
+    [
+      3,
+      7,
+      0,
+      6,
+      0,
+      "IMAGE"
+    ],
+    [
+      4,
+      6,
+      0,
+      9,
+      1,
+      "IMAGE"
+    ],
+    [
+      5,
+      10,
+      0,
+      9,
+      0,
+      "MODEL_PhotoDoodle"
+    ],
+    [
+      6,
+      9,
+      0,
+      12,
+      0,
+      "IMAGE"
+    ],
+    [
+      7,
+      6,
+      0,
+      14,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.7513148009015777,
+      "offset": [
+        -451.56383244911035,
+        -392.4255383283919
+      ]
+    }
+  },
+  "version": 0.4
+}

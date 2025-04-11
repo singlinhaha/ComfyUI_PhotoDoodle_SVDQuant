@@ -21,7 +21,7 @@
 1. 克隆项目
 ```powershell
 cd custom_nodes
-git clone https://github.com/singlinhaha/Comfyui_Heygem_Docker.git
+git clone https://github.com/singlinhaha/ComfyUI_PhotoDoodle_SVDQuant
 ```
 
 2. 安装依赖
